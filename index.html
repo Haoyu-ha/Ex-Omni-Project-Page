@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models">
+  <meta name="description" content="Ex-Omni is an omni-modal framework that introduces 3D facial animation generation for omni-modal large language models.">
+  <meta name="keywords" content="Ex-Omni, omni-modal large language models, 3D facial animation">
+  <meta name="author" content="Haoyu Zhang, Zhipeng Li, Yiwen Guo, Tianshu Yu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Chinese University of Hong Kong, Shenzhen · LIGHTSPEED · Independent Researcher">
+  <meta property="og:title" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models">
+  <meta property="og:description" content="Ex-Omni is an omni-modal framework that introduces 3D facial animation generation for omni-modal large language models.">
+  <meta property="og:url" content="https://haoyu-ha.github.io/Ex-Omni-Test/">
+  <meta property="og:image" content="https://example.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models - Research Preview">
+  <meta property="article:published_time" content="2026-02-06T00:00:00.000Z">
+  <meta property="article:author" content="Haoyu Zhang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="omni-modal large language model">
+  <meta property="article:tag" content="3D facial animation">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <meta name="twitter:title" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models">
+  <meta name="twitter:description" content="Ex-Omni is an omni-modal framework that introduces 3D facial animation generation for omni-modal large language models.">
+  <meta name="twitter:image" content="https://example.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models">
+  <meta name="citation_author" content="Zhang, Haoyu">
+  <meta name="citation_author" content="Li, Zhipeng">
+  <meta name="citation_author" content="Guo, Yiwen">
+  <meta name="citation_author" content="Yu, Tianshu">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="arXiv preprint">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2602.07106.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models - Zhang et al. | Academic Research</title>
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models",
+    "description": "Ex-Omni is an omni-modal framework that introduces 3D facial animation generation for omni-modal large language models.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Haoyu Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The Chinese University of Hong Kong, Shenzhen"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Zhipeng Li",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "LIGHTSPEED"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yiwen Guo",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Independent Researcher"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Tianshu Yu",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "The Chinese University of Hong Kong, Shenzhen"
+        }
+      }
+    ],
+    "datePublished": "2026-02-06",
+    "publisher": {
+      "@type": "Organization",
+      "name": "arXiv"
+    },
+    "url": "https://haoyu-ha.github.io/Ex-Omni-Test/",
+    "image": "https://example.com/static/images/social_preview.png",
+    "keywords": [
+      "omni-modal large language models",
+      "3D facial animation"
+    ],
+    "abstract": "Omni-modal large language models (OLLMs) aim to unify multimodal understanding and generation, yet incorporating speech with 3D facial animation remains largely unexplored despite its importance for natural interaction. A key challenge arises from the representation mismatch between discrete, token-level semantic reasoning in LLMs and the dense, fine-grained temporal dynamics required for 3D facial motion, which makes direct modeling difficult to optimize under limited data. We propose Expressive Omni (Ex-Omni), an open-source omni-modal framework that augments OLLMs with speech-accompanied 3D facial animation. Ex-Omni reduces learning difficulty by decoupling semantic reasoning from temporal generation, leveraging speech units as temporal scaffolding and a unified token-as-query gated fusion (TQGF) mechanism for controlled semantic injection. We further introduce InstructEx, a dataset aims to facilitate augment OLLMs with speech-accompanied 3D facial animation. Extensive experiments demonstrate that Ex-Omni performs competitively against existing open-source OLLMs while enabling stable aligned speech and facial animation generation.",
+    "citation": "Haoyu Zhang, Zhipeng Li, Yiwen Guo, and Tianshu Yu. \"Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models.\" arXiv preprint arXiv:2602.07106, 2026.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://haoyu-ha.github.io/Ex-Omni-Test/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "omni-modal large language models"
+      },
+      {
+        "@type": "Thing", 
+        "name": "3D facial animation"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "",
+    "@type": "Organization",
+    "name": "Ex-Omni",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+
+  <!-- Custom layout + video sizing -->
+  <style>
+    /* 统一主内容宽度 */
+    .ex-omni-container {
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .video-wrapper {
+      width: 100%;
+      aspect-ratio: 732 / 1080;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  
+    .video-wrapper-wide {
+      width: 100%;
+      aspect-ratio: 3420 / 1846;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .video-wrapper-wide video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+
+
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container ex-omni-container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Ex-Omni: Enabling 3D Facial Animation Generation<br>
+              for Omni-modal Large Language Models
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank">Haoyu Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a target="_blank">Zhipeng Li</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://yiwenguo.github.io" target="_blank">Yiwen Guo</a><sup>3,†</sup>,</span>
+              <span class="author-block">
+                <a href="https://mypage.cuhk.edu.cn/academics/yutianshu/index.html" target="_blank">Tianshu Yu</a><sup>1,†</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup> The Chinese University of Hong Kong, Shenzhen<br>
+                <sup>2</sup> LIGHTSPEED<br>
+                <sup>3</sup> Independent Researcher<br>
+                <sup>†</sup> Corresponding authors.<br>
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2602.07106.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <span style="font-size: 1.2em;">🤗</span>
+                  </span>
+                  <span>Dataset (coming soon)</span>
+                </a>
+              </span>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser image (Model Pipeline) -->
+  <section class="hero teaser">
+    <div class="container ex-omni-container">
+      <div class="hero-body has-text-centered">
+  
+        <figure class="image">
+          <img src="static/images/overall_pipeline.png"
+               alt="Overall pipeline of Ex-Omni"
+               style="max-width: 600px; width: 100%; height: auto; margin: 0 auto;">
+        </figure>
+  
+        <h2 class="subtitle has-text-centered"
+            style="font-family: 'Times New Roman', Times, serif; font-size: 1.05rem;">
+          Overall pipeline.
+        </h2>
+  
+      </div>
+    </div>
+  </section>
+  <!-- End teaser image -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container ex-omni-container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            Omni-modal large language models (OLLMs) aim to unify multimodal understanding and generation, yet incorporating speech with 3D facial animation remains largely unexplored despite its importance for natural interaction. A key challenge arises from the representation mismatch between discrete, token-level semantic reasoning in LLMs and the dense, fine-grained temporal dynamics required for 3D facial motion, which makes direct modeling difficult to optimize under limited data. We propose Expressive Omni (Ex-Omni), an open-source omni-modal framework that augments OLLMs with speech-accompanied 3D facial animation. Ex-Omni reduces learning difficulty by decoupling semantic reasoning from temporal generation, leveraging speech units as temporal scaffolding and a unified token-as-query gated fusion (TQGF) mechanism for controlled semantic injection. We further introduce InstructEx, a dataset aims to facilitate augment OLLMs with speech-accompanied 3D facial animation. Extensive experiments demonstrate that Ex-Omni performs competitively against existing open-source OLLMs while enabling stable aligned speech and facial animation generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Interactive Demo Video -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container ex-omni-container has-text-centered">
+  
+        <h2 class="title is-3">Interactive Demo</h2>
+  
+        <div class="video-wrapper-wide" style="max-width: 1080px; margin: 0 auto;">
+          <video controls muted playsinline preload="auto">
+            <source src="static/videos/interactive_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+  
+        <!-- Caption -->
+        <p class="has-text-centered"
+           style="margin-top: 0.75rem; font-size: 0.95rem; color: #555; font-family: 'Times New Roman', Times, serif;">
+          <strong>Note:</strong> The demo is deployed on an NVIDIA H20 GPU. The video is rendered using PyTorch3D based on the blendshape coefficients generated by Ex-Omni. The rendering latency is due to the video synthesis process and does not reflect the model's inference time.
+        </p>
+  
+      </div>
+    </div>
+  </section>
+  <!-- End Interactive Demo Video -->
+
+  <!-- Demo Clips Grid -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container ex-omni-container">
+        <h2 class="title is-3">Rendered Demo</h2>
+  
+        <!-- 每一行 3 个视频 -->
+        <div class="columns is-multiline is-centered">
+  
+          <!-- Video 1 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 2 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 3 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 4 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/4.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 5 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/5.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 6 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/6.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 7 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/7.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 8 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/8.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 9 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/9.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 10 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/10.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 11 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/11.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- Video 12 -->
+          <div class="column is-one-third">
+            <div class="video-wrapper">
+              <video controls muted loop preload="auto">
+                <source src="static/videos/12.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Demo Clips Grid -->
+    
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container ex-omni-container content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{zhang2026exomni,
+  title={Ex-Omni: Enabling 3D Facial Animation Generation for Omni-modal Large Language Models},
+  author={Zhang, Haoyu and Li, Zhipeng and Guo, Yiwen and Yu, Tianshu},
+  journal={arXiv preprint arXiv:2602.07106},
+  year={2026},
+  url={https://arxiv.org/abs/2602.07106}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+    <div class="container ex-omni-container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+  <!-- Add a tracker here if needed -->
+  <!-- End of Statcounter Code -->
+
+</body>
+</html>
