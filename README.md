@@ -30,4 +30,4 @@ Large Language Models.</b>
 
 ## Acknowledgments
 This page was built using the [Academic Project Page Template] (https://github.com/eliahuhorwitz/Academic-project-page-template) which was adopted from the [Nerfies](https://nerfies.github.io) project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
-This website is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License]) (https://creativecommons.org/licenses/by-sa/4.0/).
+This website is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License]) (https://creativecommons.org/licenses/by-sa/4.0/).# Ex-Omni-Project-Page
